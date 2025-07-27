@@ -1,213 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Elixir | إكسير الكريبتو</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0a0a0a;
-      color: #e0ffe0;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #0f0;
-      background: linear-gradient(90deg, #0f0f0f, #004400);
-      padding: 1rem;
-      text-align: center;
-      color: #00ff88;
-      font-size: 2rem;
-    }
-
-    .lang-toggle {
-      text-align: center;
-      margin: 1rem 0;
-    }
-
-    button {
-      padding: 0.5rem 1rem;
-      margin: 0.5rem;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      background-color: #00aa55;
-      color: white;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    a.subscribe {
-      display: inline-block;
-      background-color: red;
-      color: white;
-      padding: 0.7rem 1.5rem;
-      font-size: 1.2rem;
-      border-radius: 10px;
-      text-decoration: none;
-      margin-top: 1rem;
-    }
-
-    .videos iframe {
-      width: 100%;
-      max-width: 400px;
-      height: 225px;
-      margin: 1rem;
-    }
-
-    form {
-      background-color: #111;
-      padding: 1.5rem;
-      border-radius: 10px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin: 0.5rem 0;
-      border: 1px solid #00ff88;
-      border-radius: 5px;
-      background-color: #222;
-      color: #eee;
-    }
-
-    .downloads a {
-      display: inline-block;
-      margin: 1rem;
-      padding: 0.8rem;
-      background: #004400;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    footer {
-      background-color: #0a0a0a;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      color: #555;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crypto Elixir | إكسير الكريبتو</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Crypto Elixir | إكسير الكريبتو</h1>
+            <nav>
+                <ul>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#whitepaper">Whitepaper</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <header id="title">Crypto Elixir | إكسير الكريبتو</header>
+    <section id="videos" class="container">
+        <h2>🎥 Featured Videos</h2>
+        <div class="video-gallery">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed?listType=user_uploads&list=UCXXXXXXXXXXXX" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
 
-  <div class="lang-toggle">
-    <button onclick="setLanguage('en')">English</button>
-    <button onclick="setLanguage('ar')">العربية</button>
-  </div>
+    <section id="whitepaper" class="container">
+        <h2>📄 Download Whitepaper</h2>
+        <a href="whitepaper.pdf" download class="btn">Download PDF</a>
+    </section>
 
-  <section>
-    <h2 id="heading">Welcome to Crypto Elixir</h2>
-    <p id="description">
-      Your gateway to understanding the world of cryptocurrency in Arabic and English.
-      Join us as we explore trading, airdrops, mining, wallets, and more!
-    </p>
-    <a class="subscribe" href="https://www.youtube.com/@Cryp2elixir/videos" target="_blank" id="subscribeBtn">Subscribe on YouTube</a>
-  </section>
+    <section id="contact" class="container">
+        <h2>📬 Contact Us</h2>
+        <form action="mailto:your@email.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
 
-  <section class="videos">
-    <h2 id="videoGallery">Video Gallery</h2>
-    <iframe src="https://www.youtube.com/watch?v=JCWEXVUy8eE&t=134s" frameborder="0" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/watch?v=3dYiEXdEWe0&t=271s" frameborder="0" allowfullscreen></iframe>
-  </section>
-
-  <section class="downloads">
-    <h2 id="downloadTitle">Download Whitepapers</h2>
-    <a href="whitepaper_en.pdf" download>Download English PDF</a>
-    <a href="whitepaper_ar.pdf" download>تحميل الملف بالعربية</a>
-  </section>
-
-  <section class="contact">
-    <h2 id="contactTitle">Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Name / الاسم" required />
-      <input type="email" placeholder="Email / البريد الإلكتروني" required />
-      <textarea rows="4" placeholder="Message / رسالتك"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <section>
-    <h2 id="statsTitle">Channel Stats (Live)</h2>
-    <div id="stats">Loading...</div>
-  </section>
-
-  <footer id="footerText">
-    &copy; 2025 Crypto Elixir | All rights reserved.
-  </footer>
-
-  <script>
-    const texts = {
-      en: {
-        title: "Crypto Elixir | إكسير الكريبتو",
-        heading: "Welcome to Crypto Elixir",
-        description: "Your gateway to understanding the world of cryptocurrency in Arabic and English. Join us as we explore trading, airdrops, mining, wallets, and more!",
-        subscribeBtn: "Subscribe on YouTube",
-        footerText: "© 2025 Crypto Elixir | All rights reserved.",
-        videoGallery: "Video Gallery",
-        contactTitle: "Contact Us",
-        downloadTitle: "Download Whitepapers",
-        statsTitle: "Channel Stats (Live)",
-        dir: "ltr"
-      },
-      ar: {
-        title: "إكسير الكريبتو | Crypto Elixir",
-        heading: "مرحبًا بك في قناة إكسير الكريبتو",
-        description: "بوابتك لفهم عالم العملات الرقمية باللغتين العربية والإنجليزية. انضم إلينا لاكتشاف التداول والإيردروبات والتعدين والمحافظ وغير ذلك!",
-        subscribeBtn: "اشترك في اليوتيوب",
-        footerText: "© 2025 إكسير الكريبتو | جميع الحقوق محفوظة.",
-        videoGallery: "معرض الفيديوهات",
-        contactTitle: "تواصل معنا",
-        downloadTitle: "تحميل الأوراق البيضاء",
-        statsTitle: "إحصائيات القناة (مباشر)",
-        dir: "rtl"
-      }
-    };
-
-    function setLanguage(lang) {
-      const t = texts[lang];
-      document.documentElement.lang = lang;
-      document.documentElement.dir = t.dir;
-      document.getElementById("title").textContent = t.title;
-      document.getElementById("heading").textContent = t.heading;
-      document.getElementById("description").textContent = t.description;
-      document.getElementById("subscribeBtn").textContent = t.subscribeBtn;
-      document.getElementById("footerText").textContent = t.footerText;
-      document.getElementById("videoGallery").textContent = t.videoGallery;
-      document.getElementById("contactTitle").textContent = t.contactTitle;
-      document.getElementById("downloadTitle").textContent = t.downloadTitle;
-      document.getElementById("statsTitle").textContent = t.statsTitle;
-    }
-
-    async function fetchYouTubeStats() {
-      const channelId = "YOUR_CHANNEL_ID";
-      const apiKey = "YOUR_YOUTUBE_API_KEY";
-      const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelId}&key=${apiKey}`;
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        const stats = data.items[0].statistics;
-        document.getElementById("stats").innerHTML =
-          `<strong>Subscribers:</strong> ${stats.subscriberCount}<br>
-           <strong>Views:</strong> ${stats.viewCount}<br>
-           <strong>Videos:</strong> ${stats.videoCount}`;
-      } catch (error) {
-        document.getElementById("stats").textContent = "Failed to load stats.";
-      }
-    }
-
-    fetchYouTubeStats();
-  </script>
-
+    <footer>
+        <div class="container">
+            <p>Follow us:</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="YouTube" /></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Telegram" /></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Twitter" /></a>
+            </div>
+            <p>&copy; 2025 Crypto Elixir | إكسير الكريبتو</p>
+        </div>
+    </footer>
 </body>
 </html>
